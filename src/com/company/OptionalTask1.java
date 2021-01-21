@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.Scanner;
 
+//1.Найти самое короткое и самое длинное число. Вывести найденные числа и их длину.
+
 public class OptionalTask1 {
     public static void main(String[] args) {
 
@@ -13,12 +15,12 @@ public class OptionalTask1 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("How many  numbers printout: ");
-        int num_elements = scanner.nextInt();
-        System.out.println("Enter "+num_elements+" numbers:");
-        for (int i = 0; i < num_elements; i++)
+        int amountOfNumbers = scanner.nextInt();
+        System.out.println("Enter "+amountOfNumbers+" numbers:");
+        for (int i = 0; i < amountOfNumbers; i++)
         {
            int number = scanner.nextInt();
-           int numberLength = String.valueOf(number).length();
+           int numberLength = String.valueOf(Math.abs(number)).length();
            if (numberLength > maxLength) {
                maxLength = numberLength;
                maxLengthNumber = number;}
@@ -26,7 +28,6 @@ public class OptionalTask1 {
               minLength = numberLength;
               minLengthNumber = number;
            }
-
         }
         System.out.println("Longest  number is "+ maxLengthNumber+"; its length is "+ maxLength);
         System.out.println("Shortest number is "+ minLengthNumber+"; its length is "+ minLength );
