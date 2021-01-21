@@ -32,22 +32,33 @@ public class Main {
         int rnd = in.nextInt();
         System.out.print("Enter 1 to print all numbers in the same line or 2 in the next line: ");
         int view = in.nextInt();
-        if (view == 1) {
-            for (int i = 0; i < rnd; i++) {
-                Random rnd1 = new Random();
-                int number = rnd1.nextInt();
-                System.out.print(number + " ");
-            }
+        for (int i = 0; i < rnd; i++) {
+            Random rnd1 = new Random();
+            int number = rnd1.nextInt();
+            switch (view){
+                case 1: System.out.print(number + " ");
+                    break;
+                case 2: System.out.println(number + " ");
+                    break;
+                default: System.out.println("Way of printing out was selected incorrectly!");
+                    break; }
+
+        //if (view == 1) {
+          //  for (int i = 0; i < rnd; i++) {
+            //    Random rnd1 = new Random();
+            //    int number = rnd1.nextInt();
+            //    System.out.print(number + " ");
+           // }
+        //}
+        //else if(view == 2) {
+          //  for (int i = 0; i < rnd; i++) {
+         //       Random rnd1 = new Random();
+         //       int number = rnd1.nextInt();
+         //       System.out.println(number + " ");
+         //   }
         }
-        else if(view == 2) {
-            for (int i = 0; i < rnd; i++) {
-                Random rnd1 = new Random();
-                int number = rnd1.nextInt();
-                System.out.println(number + " ");
-            }
-        }
-        else System.out.println("Way of printing out was selected incorrectly!");
-        System.out.println();
+        //else System.out.println("Way of printing out was selected incorrectly!");
+       // System.out.println();
 
 
 
