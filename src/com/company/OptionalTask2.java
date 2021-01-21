@@ -15,8 +15,8 @@ public class OptionalTask2 {
         for (int i = 0; i < quantityOfNumbers; i++){
             array[i] = scanner.nextInt();
         }
-
         System.out.println(Arrays.toString(array));
+
         boolean needIteration = true;
         while (needIteration) {
             needIteration =false;
@@ -29,7 +29,7 @@ public class OptionalTask2 {
                      array[i - 1] = temporary;
                      needIteration =true;
                 }
-            }
+         }
         }
 
         System.out.println(Arrays.toString(array));
