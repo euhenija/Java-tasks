@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class Students extends Group{
+public class Students extends Group {
     private long studentsID;
     private String studentsSurname;
     private String studentsName;

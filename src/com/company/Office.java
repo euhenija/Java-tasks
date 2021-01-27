@@ -24,25 +24,31 @@ public class Office {
         listOfStudents[13] = new Students("Исторический", 2, 132, 241, "Олень", "Жанна", "Андреевна", 2001, "ул. Зеленая 1/1", 6732304);
         listOfStudents[14] = new Students("Экономический", 1, 122, 541, "Кольцов", "Артем", "Александрович", 2000, "ул. Ленина 19/5", 7947304);
         listOfStudents[15] = new Students("Экономический", 2, 222, 235, "Русак", "Ирина", "Владимировна", 2002, "ул. Вторая 19/43", 2227304);
-        //Choosing action with lists of Students
 
+
+
+        //Select action with lists of Students
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What kind of list do you want to get:\n 1 - list of Students from chosen Faculty, \n 2 - list of students of every Faculty and Course, \n 3 - list of Students with year of birth after selected, \n 4 - list of Students of Selected group \n  ");
-        int chooseAction = scanner.nextInt();
-        switch (chooseAction) {
+        System.out.println("What kind of list do you want to get:\n 1 - list of Students of selected Faculty, \n 2 - list of students of every Faculty and Course, \n 3 - list of Students with year of birth after selected, \n 4 - list of Students of selected Group \n  ");
+        int selectAction = scanner.nextInt();
+        switch (selectAction) {
+            //Output list of Students of selected Faculty
             case 1: {
                 System.out.println("Write Faculty name");
                 String facultyName = scanner.next();
                 System.out.println("List of students of " + facultyName + " faculty \n" + getListStudentsOfFaculty(listOfStudents, facultyName));
                 break;
             }
+            //Output list of Students with year of birth after selected
             case 3: {
                 System.out.println("Select a year of birth:");
                 int selectedYearOfBirth = scanner.nextInt();
                 System.out.println("List of students of faculty \n" + getListOfStudentsYoungerThenSelectedYear(listOfStudents, selectedYearOfBirth));
                 break;
             }
+
+            //Output list of Students of selected Group
             case 4: {
                 System.out.println("Select a Group number:");
                 int selectedGroupNumber = scanner.nextInt();
@@ -56,7 +62,7 @@ public class Office {
 
 
     }
-
+    //Getting list of Students of selected Faculty
     public static ArrayList<String> getListStudentsOfFaculty(Students[] listOfStudents, String facultyName) {
         ArrayList<String> listOfFacultyStudents = new ArrayList<>();
         for (Students listOfStudent : listOfStudents) {
@@ -67,7 +73,7 @@ public class Office {
         return listOfFacultyStudents;
     }
 
-
+    //Getting list of Students with year of birth after selected
     public static ArrayList<String> getListOfStudentsYoungerThenSelectedYear(Students[] listOfStudents, int selectedYearOfBirth) {
         ArrayList<String> listOfStudentsOfSelectedYear = new ArrayList<>();
         for (Students listOfStudent : listOfStudents) {
@@ -78,6 +84,8 @@ public class Office {
         return listOfStudentsOfSelectedYear;
     }
 
+
+    //Getting list of Students of selected Group
     public static ArrayList<String> getListStudentsOfGroup(Students[] listOfStudents, int selectedGroupNumber) {
         ArrayList<String> listStudentsOfGroup = new ArrayList<>();
         for (Students listOfStudent : listOfStudents) {

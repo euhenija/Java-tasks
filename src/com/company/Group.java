@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class Group extends Course{
+public class Group extends Course {
     private int groupNumber;
 
     public Group() {

@@ -9,14 +9,15 @@ public class Course extends Faculty {
     public Course() {
         super();
     }
-    public Course( int courseNumber){
-            this.courseNumber = courseNumber;
-        }
 
-    public Course(String faculty, int courseNumber){
-            super(faculty);
-            this.courseNumber = courseNumber;
-        }
+    public Course(int courseNumber) {
+        this.courseNumber = courseNumber;
+    }
+
+    public Course(String faculty, int courseNumber) {
+        super(faculty);
+        this.courseNumber = courseNumber;
+    }
 
     public int getCourseNumber() {
         return courseNumber;
