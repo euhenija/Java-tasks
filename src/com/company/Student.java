@@ -14,16 +14,6 @@ public class Student {
     private int courseNumber;
     private String faculty;
 
-//    public Student(String faculty, int courseNumber, int groupNumber, long studentsID, String studentsSurname, String studentsName, String studentsFatherName, int yearOfBirth, String address, long telephoneNumber) {
-//        super(faculty, courseNumber, groupNumber);
-//        this.studentID = studentsID;
-//        this.studentSurname = studentsSurname;
-//        this.studentName = studentsName;
-//        this.studentFatherName = studentsFatherName;
-//        this.yearOfBirth = yearOfBirth;
-//        this.address = address;
-//        this.telephoneNumber = telephoneNumber;
-//    }
 
     public long getStudentID() {
         return studentID;
