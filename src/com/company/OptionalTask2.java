@@ -34,7 +34,10 @@ public class OptionalTask2 {
         }
 
         System.out.println(Arrays.toString(array));
-
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("параметер "+args[i]);
+        }
 
     }
+
 }

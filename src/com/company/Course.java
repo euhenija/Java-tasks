@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class Course extends Faculty {
+public class Course extends Faculty1 {
 
     private int courseNumber;
 
