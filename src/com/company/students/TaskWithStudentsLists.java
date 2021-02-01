@@ -28,19 +28,19 @@ public class TaskWithStudentsLists {
 
         Comparator<Student> facultyAndCourseComparator = Comparator.comparing(Student::getFaculty).thenComparing(Student::getCourseNumber);
         Arrays.sort(listOfStudents, facultyAndCourseComparator);
-        System.out.println("List of students sorted by Faculty and Course: \n"+Arrays.toString(listOfStudents));
+        System.out.println("List of students sorted by Faculty and Course: \n" + Arrays.toString(listOfStudents));
 
         System.out.println("List of students of Historical faculty \n" + getListStudentsOfFaculty(listOfStudents));
 
         System.out.println("List of students who was born after 2000 \n" + getListOfStudentsYoungerThenSelectedYear(listOfStudents));
 
         System.out.println("List of students of group 133 \n" + getListStudentsOfGroup(listOfStudents));
-        //System.out.println("List of students of group 133 \n" + getStudentsListOfFaculty("Historical"));
+
     }
 
 
-        //Getting list of Students of selected Faculty
-    public static ArrayList<String> getListStudentsOfFaculty (Student[] listOfStudents) {
+    //Getting list of Students of selected Faculty
+    public static ArrayList<String> getListStudentsOfFaculty(Student[] listOfStudents) {
         int a = listOfStudents.length;
         ArrayList<String> listOfFacultyStudents = new ArrayList<>();
         for (Student listOfStudent : listOfStudents) {
@@ -74,13 +74,5 @@ public class TaskWithStudentsLists {
         }
         return listStudentsOfGroup;
     }
-//    public static void getStudentsListOfFaculty(String faculty, int a) {
-//        System.out.println("List of students of %s faculty \n" + faculty);
-//
-//        for (Student listOfStudents : a) {
-//            if (listOfStudents.getFaculty().equals(faculty)) {
-//                System.out.println(listOfStudents.toString());
-//            }
-//        }
-//    }
+
 }
