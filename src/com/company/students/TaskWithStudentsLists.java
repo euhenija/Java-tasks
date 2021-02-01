@@ -1,8 +1,10 @@
 package com.company.students;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Comparator;
+import java.util.Arrays;
+
 
 public class TaskWithStudentsLists {
 
@@ -25,54 +27,55 @@ public class TaskWithStudentsLists {
         listOfStudents[14] = new Student.StudentBuilder().withStudentSurname("Flag").withStudentName("Al").withYearOfBirt(2002).withGroupNumber(131).withCourseNumber(1).withFaculty("Historical").build();
         listOfStudents[15] = new Student.StudentBuilder().withStudentSurname("Stone").withStudentName("Al").withYearOfBirt(2000).withGroupNumber(131).withCourseNumber(2).withFaculty("Historical").build();
 
+        ListsOfStudents selectedList = new ListsOfStudents();
+        for (Student listOfStudent : listOfStudents) {
+            selectedList.addStudent(listOfStudent);
+        }
+
+
+        selectedList.getListStudentsOfFaculty("Economical");
+        selectedList.getListOfStudentsYoungerThenSelectedYear(2000);
+        selectedList.getListStudentsOfGroup(131);
 
         Comparator<Student> facultyAndCourseComparator = Comparator.comparing(Student::getFaculty).thenComparing(Student::getCourseNumber);
         Arrays.sort(listOfStudents, facultyAndCourseComparator);
         System.out.println("List of students sorted by Faculty and Course: \n" + Arrays.toString(listOfStudents));
 
-        System.out.println("List of students of Historical faculty \n" + getListStudentsOfFaculty(listOfStudents));
-
-        System.out.println("List of students who was born after 2000 \n" + getListOfStudentsYoungerThenSelectedYear(listOfStudents));
-
-        System.out.println("List of students of group 133 \n" + getListStudentsOfGroup(listOfStudents));
-
     }
 
 
-    //Getting list of Students of selected Faculty
-    public static ArrayList<String> getListStudentsOfFaculty(Student[] listOfStudents) {
-        int a = listOfStudents.length;
-        ArrayList<String> listOfFacultyStudents = new ArrayList<>();
-        for (Student listOfStudent : listOfStudents) {
-            if (listOfStudent.getFaculty().equals("Economical")) {
-                listOfFacultyStudents.add(listOfStudent.getStudentSurname() + " " + listOfStudent.getStudentName());
+    public static class ListsOfStudents {
+        private final List<Student> studentsList = new ArrayList<>();
+
+        public void addStudent(Student student) {
+            studentsList.add(student);
+        }
+
+        public void getListStudentsOfFaculty(String faculty) {
+            System.out.println("List of students of " + faculty + " faculty");
+            for (Student numberOfStudents : studentsList) {
+                if (numberOfStudents.getFaculty().equals(faculty)) {
+                    System.out.print(numberOfStudents.toString());
+                }
             }
         }
-        return listOfFacultyStudents;
-    }
 
-    //Getting list of Students with year of birth after selected
-    public static ArrayList<String> getListOfStudentsYoungerThenSelectedYear(Student[] listOfStudents) {
-        ArrayList<String> listOfStudentsOfSelectedYear = new ArrayList<>();
-        for (Student listOfStudent : listOfStudents) {
-            if (listOfStudent.getYearOfBirth() > 2000) {
-                listOfStudentsOfSelectedYear.add(listOfStudent.getStudentSurname() + " " + listOfStudent.getStudentName() + " " + listOfStudent.getYearOfBirth());
+        public void getListOfStudentsYoungerThenSelectedYear(int yearOfBirth) {
+            System.out.println("List of students who was born after " + yearOfBirth + " year");
+            for (Student numberOfStudents : studentsList) {
+                if (numberOfStudents.getYearOfBirth() > yearOfBirth) {
+                    System.out.print(numberOfStudents.toString());
+                }
             }
         }
-        return listOfStudentsOfSelectedYear;
 
-    }
-
-
-    //Getting list of Students of selected Group
-    public static ArrayList<String> getListStudentsOfGroup(Student[] listOfStudents) {
-        ArrayList<String> listStudentsOfGroup = new ArrayList<>();
-        for (Student listOfStudent : listOfStudents) {
-            if (listOfStudent.getGroupNumber() == 133) {
-                listStudentsOfGroup.add(listOfStudent.getStudentSurname() + " " + listOfStudent.getStudentName() + " " + listOfStudent.getStudentFatherName());
+        public void getListStudentsOfGroup(int group) {
+            System.out.println("List of students of group  " + group);
+            for (Student numberOfStudents : studentsList) {
+                if (numberOfStudents.getGroupNumber() == group) {
+                    System.out.print(numberOfStudents.toString());
+                }
             }
         }
-        return listStudentsOfGroup;
     }
-
 }
