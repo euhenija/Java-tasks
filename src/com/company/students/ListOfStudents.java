@@ -23,12 +23,10 @@ class ListsOfStudents {
             new Student.StudentBuilder().withStudentSurname("Stone").withStudentName("Al").withYearOfBirt(2000).withGroupNumber(131).withCourseNumber(2).withFaculty("Historical").build()
     };
 
-    List<Student> listOfStudents = Arrays.asList(arrayListOfStudents);
-
 
     public void getListStudentsOfFaculty(String faculty) {
         System.out.println("List of students of " + faculty + " faculty");
-        for (Student numberOfStudents : listOfStudents) {
+        for (Student numberOfStudents : arrayListOfStudents) {
             if (numberOfStudents.getFaculty().equals(faculty)) {
                 System.out.print(numberOfStudents.toString());
             }
@@ -37,7 +35,7 @@ class ListsOfStudents {
 
     public void getListOfStudentsYoungerThenSelectedYear(int yearOfBirth) {
         System.out.println("List of students who was born after " + yearOfBirth + " year");
-        for (Student numberOfStudents : listOfStudents) {
+        for (Student numberOfStudents : arrayListOfStudents) {
             if (numberOfStudents.getYearOfBirth() > yearOfBirth) {
                 System.out.print(numberOfStudents.toString());
             }
@@ -46,7 +44,7 @@ class ListsOfStudents {
 
     public void getListStudentsOfGroup(int group) {
         System.out.println("List of students of group  " + group);
-        for (Student numberOfStudents : listOfStudents) {
+        for (Student numberOfStudents : arrayListOfStudents) {
             if (numberOfStudents.getGroupNumber() == group) {
                 System.out.print(numberOfStudents.toString());
             }
