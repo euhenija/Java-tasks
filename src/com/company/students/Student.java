@@ -142,8 +142,7 @@ public class Student {
                 ", yearOfBirth: " + yearOfBirth +
                 ", groupNumber: " + groupNumber +
                 ", courseNumber: " + courseNumber +
-                ", faculty: " + faculty +
-                "\n";
+                ", faculty: " + faculty + "\n";
     }
 
 }

@@ -12,6 +12,5 @@ public class Main {
         selectedList.getListStudentsOfGroup(131);
         selectedList.getListOfStudentsOfALLFacultiesAndCourses();
 
-
     }
 }
